@@ -1,0 +1,25 @@
+.header{
+    position: fixed;
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgb(215, 233, 245);
+    background-color: white;
+    z-index: 1000;
+}
+.web_name{
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(43, 42, 42);
+}
+.search{
+    float: right;
+    width: 200px;
+}
+.btn_login{
+    float: right;
+}
+.footer{
+    text-align: center;
+    margin: 10px;
+}
