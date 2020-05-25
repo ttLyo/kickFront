@@ -12,10 +12,9 @@ class title extends Component {
                 onBack={this.back}
                 title="Title"
                 />
-                <h1>TITLE</h1>
+                <h1>{this.props.name}</h1>
                 <p className="description">
-                    some description some descriptionsome description some descript
-                    ionsome description some descriptionsome description some description
+                    {this.props.instruction}
                 </p>
             </div>
         )

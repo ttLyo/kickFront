@@ -5,20 +5,42 @@ import Information from "./children/informaton"
 import axios from "../../util/axios"
 import "./detail.scss"
 class detail extends Component {
-    componentDidMount(){
-        console.log(this.props.match.params)
-        axios.get("getByPid").then(res=>{
-            console.log(res)
-        })
+    constructor(){
+        super()
+        
+        this.state={
+            name:"",
+            author:"",
+            image:"",
+            startTime:"",
+            endTime:"",
+            instruction:"",
+            targetMoney:"",
+            currentMoney:"",
+            qrCode:"",
+            isEnded:false,
+            isChecked:false,
+            isFinished:false
+        }
     }
-    back=()=>{
-        window.history.back()
+    componentDidMount(){
+        this.getInfo(this.props.match.params.id)
+    }
+    getInfo=(id)=>{
+         axios.get("project/getByPid?pid="+id).then(res=>{
+            console.log(res)
+            // this.setState()
+        })
     }
     render(){
         return (
             <div className="detail">
-                <Title />
-                <Summary />
+                <Title name={this.state.name} instruction={this.state.instruction} />
+                <Summary 
+                targetMoney={this.state.targetMoney} 
+                currentMoney={this.state.currentMoney}
+                endTime={this.state.endTime}
+                />
                 <Information />
             </div>
         )
