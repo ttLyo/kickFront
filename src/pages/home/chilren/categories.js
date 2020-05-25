@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import itemjpg from "../../images/123.jpeg"
 import Productoin from "../../common/prodution"
+import { Link } from 'react-router-dom'
 class categories extends Component {
     componentDidMount(){
     }
@@ -10,9 +11,9 @@ class categories extends Component {
             <div className="categories">
                 {categoriesTypes.map((type, index)=>(
                     <div key={index} id={type}>
-                    <h2>{type}</h2>
+                    <Link to={"/category/"+index} className="typeName">{type}</Link>
                     <div className="categoriesItem">
-                        {[1,2,3,4].map((item,index)=>(
+                        {[1,2,3,4,5,6,7,8].map((item,index)=>(
                             <Productoin 
                             key={index}
                             id={index}

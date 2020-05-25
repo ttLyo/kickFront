@@ -21,11 +21,38 @@
 }
 .production{
     cursor: pointer;
-    width: 22%;
+    width: 24%;
+    margin-bottom: 10px;
+    padding: 12px;
     color: black;
+    transition: border-color 0.5s;
+    -webkit-transition: border-color 0.5s;
+    -moz-transition: border-color 0.5s;
+    -ms-transition: border-color 0.5s;
+    -o-transition: border-color 0.5s;
+    border:1px dotted white;
+
+    .title{
+        font-size: 1.3em;
+        height: 25px;
+        color: rgb(68, 67, 67);
+    }
+    .author{
+        font-size: 0.9em;
+        color: rgb(68, 67, 67);
+        height: 20px;
+        padding-left: 15px;
+    }
+    .content{
+        height: 50px;
+        color: rgb(68, 67, 67);
+    }
     img{
         width: 100%;
     }
+}
+.production:hover{
+    border:1px dotted rgb(99, 95, 95);
 }
 .footer{
     text-align: center;

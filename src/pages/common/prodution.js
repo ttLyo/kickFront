@@ -6,9 +6,9 @@ function production(props) {
   return (
     <Link to={"/detail/"+props.id} className="production">
       <img src={props.img} alt="img"/>
-      <p className="title">{props.title}</p>
-      <p>{props.author}</p>
-      <p>{props.content}</p>
+      <div className="title">{props.title}</div>
+      <div className="author">{props.author}</div>
+      <div className="content">{props.content}</div>
     </Link>
   );
 }

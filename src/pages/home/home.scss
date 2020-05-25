@@ -1,5 +1,5 @@
 .home{
-    padding: 70px 10%;
+    padding: 70px 13% 0 7%;
     /* background-color: rgb(250, 253, 250); */
 }
 .nav{
@@ -41,17 +41,21 @@
     .hotList{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding: 5px;
     }
 }
 .categories{
-    h3{
-        margin: 10px 0;;
+    .typeName{
+        margin: 20px 13px 2px;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #0c0b09;
     }
     .categoriesItem{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding-top: 5px;
-        border-bottom: 1px groove rgb(163, 159, 159);
     }
 }
