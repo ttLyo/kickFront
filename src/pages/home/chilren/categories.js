@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import { Link } from 'react-router-dom'
 import itemjpg from "../../images/123.jpeg"
+import Productoin from "../../common/prodution"
 class categories extends Component {
     componentDidMount(){
     }
@@ -12,15 +12,14 @@ class categories extends Component {
                     <div>
                     <h2>{type}</h2>
                     <div className="categoriesItem">
-                        {[1,2,3,4].map((item)=>(
-                            <Link to={"/detail/"+item} className="production" key={item}>
-                                {/* <div> */}
-                                    <img src={itemjpg} alt="img"/>
-                                    <p className="title">some title</p>
-                                    <p>author</p>
-                                    <p>content</p>
-                                {/* </div> */}
-                            </Link>
+                        {[1,2,3,4].map((item,index)=>(
+                            <Productoin 
+                            key={index}
+                            id={index}
+                            img={itemjpg} 
+                            title="some title" 
+                            author="some author" 
+                            content="some content" />
 
                         ))}
                     </div>
