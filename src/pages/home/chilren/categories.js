@@ -9,7 +9,7 @@ class categories extends Component {
         return (
             <div className="categories">
                 {categoriesTypes.map((type, index)=>(
-                    <div key={index}>
+                    <div key={index} id={type}>
                     <h2>{type}</h2>
                     <div className="categoriesItem">
                         {[1,2,3,4].map((item,index)=>(
