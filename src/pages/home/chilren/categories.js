@@ -8,8 +8,8 @@ class categories extends Component {
         let categoriesTypes=["绘画","影视","手工艺","食品","文字"]
         return (
             <div className="categories">
-                {categoriesTypes.map((type)=>(
-                    <div>
+                {categoriesTypes.map((type, index)=>(
+                    <div key={index}>
                     <h2>{type}</h2>
                     <div className="categoriesItem">
                         {[1,2,3,4].map((item,index)=>(

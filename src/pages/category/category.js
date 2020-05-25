@@ -5,11 +5,11 @@ import ItemList from "./children/itemList"
 // import ItemList from "./chilren/itemList"
 // import Hot from "./chilren/hot"
 
-function category() {
+function category(props) {
   return (
     <div className="home">
-        <Info />
-        <ItemList />
+      <Info linkId={props.match.params.id} />
+      <ItemList linkId={props.match.params.id}/>
         {/* <Activity />
         <Hot /> */}
         
