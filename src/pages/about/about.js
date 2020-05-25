@@ -9,7 +9,7 @@ ReactDOM.render(<SiderDemo />, document.getElementById('root'));
 
 
 
-function about() {
+function About() {
   return (
     <div className="about">
         <Layout />
@@ -17,4 +17,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;

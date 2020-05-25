@@ -9,6 +9,7 @@ import LoginAndRegister from "./pages/loginAndRegister/loginAndRegister"
 import Footer from "./pages/common/footer"
 // import logo from './logo.svg';
 import './App.css';
+import About from "./pages/about/about";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/person/:id" component={Person} />
           <Route path="/category/:id" component={Category} />
           <Route path="/loginAndRegister" component={LoginAndRegister} />
+          <Route path="/about" component={About} />
         </Switch>
       <Footer />
       
