@@ -1,8 +1,31 @@
 import React, { Component } from "react"
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
+import axios from "../../../util/axios"
 class login extends Component {
+    constructor(){
+        super();
+        this.state={
+            username:"",
+            password:""
+        }
+    }
+    login=(e)=>{
+        console.log(e)
+        let data=new FormData()
+        data.append("username",e.username)
+        data.append("password",e.password)
+        
+        axios.post("login",data).then(res=>{
+            console.log(res)
+            if(res.data.code===200){
+                localStorage.setItem("token",res.data.data.token)
+                localStorage.setItem("username",e.username)
+                window.location.hash="#/"
+            }
+            
+        })
+    }
     render(){
         return (
             <div className="login">
@@ -10,7 +33,7 @@ class login extends Component {
                 name="normal_login"
                 className="login-form"
                 initialValues={{ remember: true }}
-                // onFinish={onFinish}
+                onFinish={this.login}
                 >
                     <Form.Item
                         name="username"

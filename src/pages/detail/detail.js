@@ -29,7 +29,7 @@ class detail extends Component {
     getInfo=(id)=>{
          axios.get("project/getByPid?pid="+id).then(res=>{
             console.log(res)
-            // this.setState()
+            this.setState(res.data.data)
         })
     }
     render(){
@@ -37,9 +37,9 @@ class detail extends Component {
             <div className="detail">
                 <Title name={this.state.name} instruction={this.state.instruction} />
                 <Summary 
-                targetMoney={this.state.targetMoney} 
-                currentMoney={this.state.currentMoney}
-                endTime={this.state.endTime}
+                    targetMoney={this.state.targetMoney} 
+                    currentMoney={this.state.currentMoney}
+                    endTime={this.state.endTime}
                 />
                 <Information />
             </div>

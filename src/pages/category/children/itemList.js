@@ -71,19 +71,6 @@ class itemList extends Component {
 
                 ))}
             </div>
-            // <div className="itemList">
-            //     {[1,2,3,4,5,6].map((item)=>(
-            //             <Link to={"/detail/"+item} className="item" key={item}>
-            //                 {/* <div> */}
-            //                     <img src={itemjpg} alt="img"/>
-            //                     <p className="title">some title</p>
-            //                     <p>author</p>
-            //                     <p>content</p>
-            //                 {/* </div> */}
-            //             </Link>
-
-            //         ))}
-            // </div>
         )
     }
 }

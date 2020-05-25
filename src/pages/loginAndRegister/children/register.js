@@ -1,13 +1,15 @@
 import React, { Component } from "react"
 import { Form, Input, Button, Checkbox } from 'antd';
+import axios from "../../../util/axios"
 const formItemLayout = {
+
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 4 },
+      sm: { span: 6,offset:2 },
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 16 },
+      sm: { span: 8 },
     },
   };
   const tailFormItemLayout = {
@@ -22,14 +24,18 @@ const formItemLayout = {
       },
     },
   };
-  const RegistrationForm = () => {
-    const [form] = Form.useForm();
-  
-    const onFinish = values => {
-      console.log('Received values of form: ', values);
-    };
-}
+
 class register extends Component {
+    register=(e)=>{
+        console.log(e)
+        let data={
+            username:e.username,
+            password:e.password
+        }
+        axios.post("login",JSON.stringify(data)).then(res=>{
+            console.log(res)
+        })
+    }
     render(){
         return (
             <div className="register">
@@ -37,7 +43,7 @@ class register extends Component {
                 {...formItemLayout}
                 // form={form}
                 name="register"
-                // onFinish={onFinish}
+                onFinish={register}
                 initialValues={{
                     residence: ['zhejiang', 'hangzhou', 'xihu'],
                     prefix: '86',
@@ -45,13 +51,9 @@ class register extends Component {
                 scrollToFirstError
                 >
                     <Form.Item
-                        name="email"
-                        label="E-mail"
+                        name="username"
+                        label="Username"
                         rules={[
-                        {
-                            type: 'email',
-                            message: 'The input is not valid E-mail!',
-                        },
                         {
                             required: true,
                             message: 'Please input your E-mail!',
@@ -98,13 +100,6 @@ class register extends Component {
                         <Input.Password />
                     </Form.Item>
 
-                    <Form.Item
-                        name="nickname"
-                        label="Nicknam"
-                        rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
-                    >
-                        <Input />
-                    </Form.Item>
                     
                     <Form.Item {...tailFormItemLayout}>
                         <Button type="primary" htmlType="submit">

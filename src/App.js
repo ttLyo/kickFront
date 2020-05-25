@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom'
+import { createHashHistory } from 'history';
 import Header from "./pages/common/header"
 import Home from "./pages/home/home"
 import Detail from "./pages/detail/detail"
@@ -10,15 +11,15 @@ import Footer from "./pages/common/footer"
 // import logo from './logo.svg';
 import './App.css';
 import About from "./pages/about/about";
-
+const hashHistory = createHashHistory();
 function App() {
   return (
-    <HashRouter>
+    <HashRouter history={hashHistory}>
       <Header />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/detail/:id" component={Detail} />
-          <Route path="/person/:id" component={Person} />
+          <Route path="/person/:id" component={About} />
           <Route path="/category/:id" component={Category} />
           <Route path="/loginAndRegister" component={LoginAndRegister} />
           <Route path="/about" component={About} />

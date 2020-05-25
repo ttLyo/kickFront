@@ -2,8 +2,26 @@ import React, { Component } from "react"
 import itemjpg from "../../images/123.jpeg"
 import Productoin from "../../common/prodution"
 import { Link } from 'react-router-dom'
+import axios from "../../../util/axios"
 class categories extends Component {
+    constructor(){
+        super()
+        this.state={
+            list:{}
+        }
+    }
     componentDidMount(){
+        let list={}
+        for(let i=1;i<6;i++)
+            ((index)=>{
+                // axios.get("getByCategory?category="+index).then(res=>{
+                //     if(res.data.code===200){
+                //         list[index]=res.data.data
+                //     }
+                // })
+            })(i)
+        this.setState(list)
+        console.log(list)
     }
     render(){
         let categoriesTypes=["绘画","影视","手工艺","食品","文字"]
