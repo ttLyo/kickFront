@@ -32,13 +32,32 @@
     }
 }
 .hot{
-    margin-top: 20px;
+    margin: 20px;
     .hotList{
         display: flex;
         justify-content: space-between;
-        padding-top: 5px;
+        padding: 5px;
     }
     .hotItem{
+        cursor: pointer;
+        width: 22%;
+        color: black;
+    }
+    img{
+        width: 100%;
+    }
+}
+.categories{
+    h3{
+        margin: 10px 0;;
+    }
+    .categoriesItem{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 5px;
+        border-bottom: 1px groove rgb(163, 159, 159);
+    }
+    .production{
         cursor: pointer;
         width: 22%;
         color: black;

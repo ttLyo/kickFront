@@ -3,6 +3,7 @@ import './home.scss';
 import Nav from "./chilren/nav"
 import Activity from "./chilren/activity"
 import Hot from "./chilren/hot"
+import Categaries from "./chilren/categories"
 
 function home() {
   return (
@@ -10,7 +11,7 @@ function home() {
         <Nav />
         <Activity />
         <Hot />
-        
+        <Categaries />
     </div>
   );
 }

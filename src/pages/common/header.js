@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button,Input} from "antd"
 import { Link } from 'react-router-dom'
-import './common.css';
+import './common.scss';
 const {Search} = Input
 
 function header() {
