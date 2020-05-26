@@ -1,44 +1,46 @@
 import React, { Component } from "react"
-import Productoin from "../../common/prodution"
+import Productoin from "../common/prodution"
 import axios from "../../util/axios"
-class title extends Component {
+import "./search.scss"
+class search extends Component {
     constructor(){
         super()
         this.state={
-            list:{}
+            list:[]
         }
     }
     componentDidMount(){
         this.getInfo(this.props.match.params.key)
     }
     getInfo=(key)=>{
-        axios.get("getByName?name="+index).then(res=>{
+        key = decodeURI(key)
+        axios.get("project/getByName?name="+key).then(res=>{
+            console.log(res)
             if(res.data.code===200){
-                list=res.data.data
+                this.setState({list:res.data.data})
             }
         })
     }
     render() {
-        const datas = this.getData();
-        const { id } = this.state;
-        this.items = datas[id];
-        //console.log(123);
-        console.log(this.items);
+        
         return (
-            <div className="itemList">
-                {this.items.map((item, index) => (
-                    <Productoin 
-                        key={index}
-                        id={index}
-                        img={itemjpg}
-                        title={item.title}
-                        author={item.author}
-                        content={item.content}
-                    />
+            <div className="searchResult">
+                <div className="resultList">
+                    {this.state.list.map((item, index) => (
+                        <Productoin 
+                            key={index}
+                            id={item.pid}
+                            img={item.image}
+                            title={item.title}
+                            author={item.author}
+                            content={item.content}
+                        />
 
-                ))}
+                    ))}
+                </div>
             </div>
+
         )
     }
 }
-export default title
+export default search

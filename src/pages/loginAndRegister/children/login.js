@@ -20,8 +20,10 @@ class login extends Component {
             console.log(res)
             if(res.data.code===200){
                 localStorage.setItem("token",res.data.data.token)
+                localStorage.setItem("info",JSON.stringify(res.data.data.info))
                 localStorage.setItem("username",e.username)
                 window.location.hash="#/"
+                window.location.reload()
             }
             
         })

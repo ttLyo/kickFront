@@ -20,6 +20,11 @@ const menu = (
       </a>
     </Menu.Item>
   </Menu>)
+  
+function goSearch(key){
+  window.location.hash="#search/"+encodeURIComponent(key)
+  window.location.reload()
+}
 function header() {
   let person=username===""?
   (<Link to="/loginAndRegister"><Button className="btn_login" type="link">登录/注册</Button></Link>):
@@ -31,7 +36,7 @@ function header() {
     <div className="header">
         <Link to="/"><span className="web_name">ICOLLECT</span></Link>
         {person}
-        <Search className="search" ></Search>
+        <Search className="search" onSearch={goSearch} ></Search>
     </div>
   );
 }

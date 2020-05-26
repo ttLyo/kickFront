@@ -16,10 +16,23 @@ class summary extends Component {
         this.setState({IsShowSupport:true})
     }
     support=()=>{
-        if(document.cookie==""){
+        if(localStorage.getItem("username")==""){
             message.info("您未登录",2)
         }
-        // axios.get()
+        console.log(this.props)
+        let data={
+            pid:this.props.pid,
+            donor:localStorage.getItem("username"),
+            donee:this.props.author,
+            money:this.state.money
+        }
+        axios.post("addDonation",JSON.stringify(data)).then(res=>{
+            console.log(res)
+            if(res.data.code==200){
+                message.info("成功")
+                window.location.reload()
+            }
+        })
     }
     handleChange=(e)=>{
         // console.log(e)

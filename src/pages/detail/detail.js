@@ -40,6 +40,8 @@ class detail extends Component {
                     targetMoney={this.state.targetMoney} 
                     currentMoney={this.state.currentMoney}
                     endTime={this.state.endTime}
+                    pid={this.state.pid}
+                    author={this.state.author}
                 />
                 <Information />
             </div>

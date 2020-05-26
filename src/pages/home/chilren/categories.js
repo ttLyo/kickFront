@@ -12,15 +12,15 @@ class categories extends Component {
     }
     componentDidMount(){
         let list={}
-        for(let i=1;i<6;i++)
-            ((index)=>{
-                // axios.get("getByCategory?category="+index).then(res=>{
-                //     if(res.data.code===200){
-                //         list[index]=res.data.data
-                //     }
-                // })
-            })(i)
-        this.setState(list)
+        // for(let i=1;i<6;i++)
+        //     ((index)=>{
+        //         axios.get("project/getByCategory?category="+index).then(res=>{
+        //             if(res.data.code===200){
+        //                 list[index]=res.data.data
+        //             }
+        //         })
+        //     })(i)
+        // this.setState(list)
         console.log(list)
     }
     render(){

@@ -28,6 +28,16 @@ const data = [
 
 
 class SiderDemo extends Component {
+    constructor(){
+        super()
+        console.log(localStorage.getItem("info"))
+        this.state={
+            user:{
+                name:localStorage.getItem("username")
+            },
+            
+        }
+    }
     render() {
         const layout = {
             labelCol: {span: 2},
@@ -53,13 +63,9 @@ class SiderDemo extends Component {
                 <Tabs tabPosition="left" style={{marginTop: '3em'}}>
                     <TabPane tab="账户信息" key="1">
 
-                        <Form {...layout}  onFinish={onFinish}  validateMessages={validateMessages}>
+                        <Form {...layout} initialValues={this.state.user}  onFinish={onFinish}  validateMessages={validateMessages}>
                             <Form.Item name='name' label="昵称">
-                                <Input/>
-                            </Form.Item>
-
-                            <Form.Item name='email' label="邮箱">
-                                <Input/>
+                                <Input value={this.state.name}/>
                             </Form.Item>
 
                             <Form.Item name='area' label="地区">
@@ -115,7 +121,7 @@ class SiderDemo extends Component {
                     <TabPane tab="项目" key="3">
                         <div className="btnNew" style={{display:'flex',justifyContent:'space-between'}}>
                             <p style={{fontSize:'2em'}}>尝试发布全新项目！</p>
-                            <Button size="large" type="primary">点击发布</Button>
+                           <Link to="/creator"><Button size="large" type="primary">点击发布</Button></Link> 
                         </div>
                         <div className="join">
                             <h2>已发布项目</h2>
